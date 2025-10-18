@@ -1,1 +1,1 @@
-# etch
+Build an etch-a-sketch in javascript.
