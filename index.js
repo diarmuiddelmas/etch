@@ -51,14 +51,15 @@ function createGrid (rows) {
            squares.push(square);
 
           square.addEventListener("mouseover", () => {
-          square.style.backgroundColor = getRandomColor();
+
+            let op = parseFloat(square.dataset.opacity) || 0;
+            op = Math.min(op + 0.1,1);
+            square.dataset.opacity = op;
+
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256); 
+        const b = Math.floor(Math.random() * 256); 
+
+          square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${op}`;
           });
-
         }}}
-
-        function getRandomColor() {
-var r = Math.floor(Math.random() * 256);
-var g = Math.floor(Math.random() * 256); 
-var b = Math.floor(Math.random() * 256); 
-return `rgba(${r}, ${g}, ${b}, 0.1)`;
-}
