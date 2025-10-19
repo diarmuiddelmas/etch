@@ -25,7 +25,12 @@ createGrid(rows);
 
 button.addEventListener("click", () => {
 
-let input = parseInt(prompt("Enter the number of squares per side"),);
+let input = parseInt(prompt("Enter the number of squares per side"),10);
+
+while (Number.isNaN(input) || input > 100 || input < 1) {
+input = parseInt(prompt("Please enter a number between 1 and 100:"), 10);
+}
+
 rows = input;
 document.documentElement.style.setProperty("--rows", rows);
 
@@ -41,7 +46,7 @@ function createGrid (rows) {
           
           const square = document.createElement("div");
            square.classList.add("square");
-           
+
            container.appendChild(square);
            squares.push(square);
 
