@@ -51,7 +51,14 @@ function createGrid (rows) {
            squares.push(square);
 
           square.addEventListener("mouseover", () => {
-          square.style.backgroundColor = "red";
+          square.style.backgroundColor = getRandomColor();
           });
 
         }}}
+
+        function getRandomColor() {
+var r = Math.floor(Math.random() * 256); // Random between 0-255
+var g = Math.floor(Math.random() * 256); // Random between 0-255
+var b = Math.floor(Math.random() * 256); // Random between 0-255
+return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
